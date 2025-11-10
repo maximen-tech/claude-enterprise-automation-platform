@@ -1,0 +1,16 @@
+# Use Case - Monitoring Web
+
+Workflow n8n pour monitoring web automatisé: navigation automatique, screenshots, alertes Slack si erreur. Adaptation du workflow monitoring-web du repo ai-automation-stack.
+
+```json
+{
+  "nodes": [
+    {"type": "cron", "parameters": {"interval": "15m"}},
+    {"type": "web-navigation"},
+    {"type": "screenshot"},
+    {"type": "slack", "parameters": {"alert": true}}
+  ],
+  "connections": [[0,1],[1,2],[2,3]],
+  "description": "Automated web monitoring with screenshots and Slack alerts every 15min."
+}
+```

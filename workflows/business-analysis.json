@@ -1,0 +1,18 @@
+# Workflow - Analyse Business Intelligence
+
+Workflow orchestrant l'exécution séquentielle des agents/skills business intelligence: footprint, BI, opportuinités automation, blueprint, reporting. Adaptation du orchestrator skills-factory BI.
+
+```json
+{
+  "nodes": [
+    {"type": "trigger", "parameters": {"input": "company_url"}},
+    {"type": "skill", "parameters": {"name": "digital-footprint-scanner"}},
+    {"type": "skill", "parameters": {"name": "business-model-extractor"}},
+    {"type": "skill", "parameters": {"name": "automation-opportunity-finder"}},
+    {"type": "skill", "parameters": {"name": "implementation-blueprint"}},
+    {"type": "reporting", "parameters": {"export": "PDF"}}
+  ],
+  "connections": [[0,1],[1,2],[2,3],[3,4],[4,5]],
+  "description": "Comprehensive business analysis automation workflow with reporting export."
+}
+```

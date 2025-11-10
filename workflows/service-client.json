@@ -1,0 +1,15 @@
+# Use Case - Service Client Automatisé
+
+Workflow n8n pour automatiser la prise en charge client, extraction donnée, réponse IA (llama3, Claude fallback). Adaptation directe du workflow du repo ai-automation-stack.
+
+```json
+{
+  "nodes": [
+    {"type": "webhook", "parameters": {"path": "service-client"}},
+    {"type": "llm", "model": "llama3"},
+    {"type": "email", "parameters": {"to": "client"}}
+  ],
+  "connections": [[0,1],[1,2]],
+  "description": "Automated customer service workflow, AI powered response and email integration."
+}
+```
